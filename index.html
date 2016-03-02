@@ -1,0 +1,146 @@
+<html>
+	<head>
+		<title>jQuery Parallax Scrolling Demo</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<style>
+			body{
+				text-align:center;
+			}
+
+			html, body
+			{
+				height:100%;
+				margin: 0;
+                padding:0;
+                position:absolute;/* this is very important*/
+                bottom:0;
+                top:0;
+                right:0;
+                left:0;
+			}
+			.bgWrapper{
+				position:fixed;
+				background:url(parallax-mountain-bg.png) top center no-repeat; 
+				background-size: 100% auto;
+				height:100%; 
+				width:100%; 
+				top:0; 
+				left:0;
+			}
+			.closemountain{
+				position:fixed;
+				background:url(parallax-mountain-mountains.png) bottom center no-repeat;
+				width:100%;
+				background-size: 100% auto;
+				height:100%; 
+				left:0;
+			/*	top:200px; */
+				/*margin-left:-600px;*/
+				/*margin-top:400px;*/
+			}
+			.farmountain{
+				position:fixed;
+				background:url(parallax-mountain-montain-far.png) top right repeat-x;
+				width:100%;
+				height:400%;
+				background-size: 100% auto;
+				/*left:50%;*/
+				/*margin-left:400px;
+				margin-top:500px;*/
+			}
+			.mountaintrees{
+				position:fixed;
+				background:url(parallax-mountain-trees.png) bottom center no-repeat;
+				width:100%;
+				height:100%;
+				top: 0px;
+				background-size: 100% auto;
+				left:0;
+				/*left:50%;*/
+				/*margin-left:400px;
+				margin-top:500px;*/
+			}
+			.mountaintreesforeground{
+				position:fixed;
+				background:url(parallax-mountain-foreground-trees.png) bottom center no-repeat;
+				width:100%;
+				height:100%;
+				top: 0px;
+				background-size: 100% auto;
+				left:0;
+				/*left:50%;*/
+				/*margin-left:400px;
+				margin-top:500px;*/
+			}
+			
+			.mainWrapper{
+				width:400px; 
+				border-radius:10px;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				-o-border-radius:10px;
+				background:#fff;
+				box-shadow:0px 0px 5px #000;
+				-moz-box-shadow:0px 0px 5px #000;
+				-webkit-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;
+				text-align:left;
+				padding:25px;
+				position:relative;
+				/*margin:15px auto;*/
+				margin-left: 0;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$(window).bind('scroll',function(e){
+			   		parallaxScroll();
+			   	});
+			   	
+			   	
+			   	function parallaxScroll(){
+			   		var scrolledY = $(window).scrollTop();
+					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
+					$('.closemountain').css('top','-'+((scrolledY*0.5/5))+'px');
+					$('.farmountain').css('top','-'+((scrolledY*0.7/5))+'px');
+					$('.mountaintrees').css('top','-'+((scrolledY*0.1/2))+'px');
+					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.01))+'px');
+			   	}
+
+			   	
+			});
+		</script>
+	</head>
+	<body>
+		<div class="bgWrapper"></div>
+		<div class="farmountain"></div>
+		<div class="closemountain"></div>
+		<div class="mountaintrees"></div>
+		<div class="mountaintreesforeground"></div>
+		
+		<div class="mainWrapper">
+			<h1>jQuery Parallax Scrolling Demo</h1>
+		
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+			<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+			
+			 
+			<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+			
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			
+		</div>
+	</body>
+</html>
+
+
+
+<!--
+<div class="bgWrapper"></div>
+<div class="bgBird"></div>
+<div class="bgRoo"></div>
+
+<div class="mainWrapper">
+	<!--content in here-->
+<!--</div>-->
