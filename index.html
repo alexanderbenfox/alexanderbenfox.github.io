@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>jQuery Parallax Scrolling Demo</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
+		<script>
+			$(document).ready(function(){
+				$(window).bind('scroll',function(e){
+			   		parallaxScroll();
+			   	});
+			   	
+			   	
+			   	function parallaxScroll(){
+			   		var scrolledY = $(window).scrollTop();
+					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
+					$('.closemountain').css('top','-'+((scrolledY*0.5))+'px');
+					$('.farmountain').css('top','-'+((scrolledY*0.7))+'px');
+					$('.mountaintrees').css('top','-'+((scrolledY*0.3))+'px');
+					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.2))+'px');
+			   	}
+
+			   	
+			});
+		</script>
+	</head>
+	<body>
+		<div class="bgWrapper"></div>
+		<div class="blackbar"></div>
+		<div class="farmountain"></div>
+		<div class="closemountain"></div>
+		<div class="mountaintrees"></div>
+		<div class="mountaintreesforeground"></div>
+		
+		<div class="mainWrapper">
+			<h1>jQuery Parallax Scrolling Demo</h1>
+		
+			<p>When I need to search for something, I use
+			<a href="http://google.com">Google</a>.</p>
+
+			<p>Here is my page on <a href="http://localhost/jq/ehb.html">EHB/Project Torchman</a>.</p>
+
+			<p>Here is my page on <a href="http://localhost/jq/spacegame.html">Space Game</a>.</p>
+
+			<p>Here is my page on <a href="http://localhost/jq/namelessgame.html">Nameless Game</a>.</p>
+			
+		</div>
+	</body>
+</html>
+
+
+
+<!--
+<div class="bgWrapper"></div>
+<div class="bgBird"></div>
+<div class="bgRoo"></div>
+
+<div class="mainWrapper">
+	<!--content in here-->
+<!--</div>-->

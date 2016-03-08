@@ -1,0 +1,123 @@
+<html>
+	<head>
+		<title>Space Game</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
+		<style>
+		html, body
+			{
+				height:100%;
+				margin: 0;
+                padding:0;
+                position:absolute;/* this is very important*/
+                bottom:0;
+                top:0;
+                right:0;
+                left:0;
+			}
+		div.img {
+		    margin: 5px;
+		    border: 1px solid #ccc;
+		    float: left;
+		    width: 400px;
+		}
+
+		div.img:hover {
+		    border: 1px solid #777;
+		}
+
+		div.img img {
+		    width: 100%;
+		    height: auto;
+		}
+
+		div.desc {
+		    padding: 15px;
+		    text-align: center;
+		}
+
+		.secondaryWrapper{
+				width:400px; 
+				border-radius:0px;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				-o-border-radius:10px;
+				background:#fff;
+				box-shadow:0px 0px 5px #000;
+				-moz-box-shadow:0px 0px 5px #000;
+				-webkit-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;
+				text-align:center;
+				padding:25px;
+				position:absolute;
+				/*right: 20px;*/
+				margin:15px auto;
+				margin-right: 0;
+			}
+		</style>
+		<script>
+			$(document).ready(function(){
+				$(window).bind('scroll',function(e){
+			   		parallaxScroll();
+			   	});
+			   	
+			   	
+			   	function parallaxScroll(){
+			   		var scrolledY = $(window).scrollTop();
+					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
+					$('.closemountain').css('top','-'+((scrolledY*0.5))+'px');
+					$('.farmountain').css('top','-'+((scrolledY*0.7))+'px');
+					$('.mountaintrees').css('top','-'+((scrolledY*0.3))+'px');
+					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.2))+'px');
+			   	}
+
+			   	
+			});
+		</script>
+	</head>
+	<body>
+		
+
+		<div class="bgWrapper"></div>
+		<div class="blackbar"></div>
+		<div class="farmountain"></div>
+		<div class="closemountain"></div>
+		<div class="mountaintrees"></div>
+		<div class="mountaintreesforeground"></div>
+
+		<div class="secondaryWrapper">
+			<h1>Space Game</h1>
+		
+			<p>This is/was my first project - it's currently on indefinite hiatus.</p>
+
+			<div class="img">
+			  <a target="_blank" href="spacegame/spacegif1.gif">
+			    <img src="spacegame/spacegif1.gif" alt="space" width="600" height="400">
+			  </a>
+			</div>
+
+			<p>
+
+				The goal for this game was to make a side scroller with high difficulty, but lots of movement options and combos - sort of like a fighting game.</p>
+
+			<p>I was heavily inspired by Bloodborne for this one because I had just begun development when Bloodborne came out - so I decided to make it a "Metroidvania set in the wild west".</p>
+
+			<div class="img">
+			  <a target="_blank" href="spacegame/spacegif2.gif">
+			    <img src="spacegame/spacegif2.gif" alt="space" width="600" height="400">
+			  </a>
+			</div>
+
+			<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
+
+			<div class="img">
+			  <a target="_blank" href="spacegame/IMG_0332.jpg">
+			    <img src="spacegame/IMG_0332.jpg" alt="space" width="600" height="400">
+			  </a>
+			</div>
+			
+		</div>
+
+
+	</body>
+</html>
