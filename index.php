@@ -2,7 +2,7 @@
 
 <html>
 	<head>
-		<title>jQuery Parallax Scrolling Demo</title>
+		<title>ALEXFOXGAMES Main Page</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
 		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
@@ -26,6 +26,7 @@
 			  position:relative;
 			  font-family: 'silkscreennormal', sans-serif;
 			  margin:auto;
+			  text-align: center;
 			  line-height:22px;
 			  letter-spacing:1px;
 			  margin-top:16px;
@@ -72,6 +73,7 @@
 			display: block;
 			content: "";
 			position:absolute;
+			text-align: center;
 			bottom:-12px;
 			right: 50px;
 			border-top: 0 #efefef solid;
@@ -104,6 +106,33 @@
 		        filter: FlipH;
 		        -ms-filter: "FlipH";
 			}
+			.blogWrapper{
+				/*font-family: Silk, sans-serif;*/
+				width:400px; 
+				height:400px;
+				border-radius:10px;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				-o-border-radius:10px;
+				background:#fff;
+				box-shadow:0px 0px 5px #000;
+				-moz-box-shadow:0px 0px 5px #000;
+				-webkit-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;
+				text-align:right;
+				padding:10px;
+				position:absolute;
+				/*margin:15px auto;*/
+				margin:15px auto;
+				margin-right: 0;
+				top:0;
+				right:0;
+				float:right;
+				overflow: scroll;
+			}
+			#blog{
+
+			}
 		</style>
 		<script>
 			$(document).ready(function(){
@@ -132,6 +161,18 @@
 					
 					
 			   	}
+			   	function getCount(parent, getChildrensChildren){
+				    var relevantChildren = 0;
+				    var children = parent.childNodes.length;
+				    for(var i=0; i < children; i++){
+				        if(parent.childNodes[i].nodeType != 3){
+				            if(getChildrensChildren)
+				                relevantChildren += getCount(parent.childNodes[i],true);
+				            relevantChildren++;
+				        }
+				    }
+				    return relevantChildren;
+				}
 
 			   	
 			});
@@ -139,20 +180,10 @@
 	</head>
 	<body>
 		<div class="bg"></div>
-		<!-- <div class="bgWrapper"></div>
-		<div class="blackbar"></div>
-		<div class="farmountain"></div>
-		<div class="closemountain"></div>
-		<div class="mountaintrees"></div>
-		<div class="mountaintreesforeground"></div> -->
-  
-
 		<div class="mainWrapper">
-			<h1>FUCK</h1>
+			<h1>alexfoxgames</h1>
 
 		
-			<p class = "pixel">When I need to search for something, I use
-			<a href="http://google.com">Google</a>.</p>
 			
 
 			<p class = "rel">	
@@ -171,10 +202,10 @@
 				</div>
 			</p>
 
-			<p>	
+			<p class = "rel">	
 				<div class="bubble-speech bubble-right" style = "position:relative;top:-17px;">
 					<div style = "text-align: center">
-						<a href="http://localhost/jq/spacegame.html">Space Game</a>
+						<a style = "text-align :center" href="http://localhost/jq/spacegame.html">Warp Hunter</a>
 					</div>
 				</div>
 				<div class = "flip-img">
@@ -182,7 +213,7 @@
 				    	<img src="darkgame/merchant.gif" alt="space" align = "left">
 					</a>
 					<p class = "flip-img" style = "position:relative;top:20px;left:10px">
-						Get to learn a little about my first project.
+						A game that borrows lovingly from it's inspiration: Super Metroid.
 					</p>
 				</div>
 			</p>
@@ -190,7 +221,7 @@
 			<p class = "rel">	
 				<div class="bubble-speech bubble-left" style = "position:relative;top:-10px;">
 					<div class="message" style = "text-align: center">
-						<a href="http://localhost/jq/namelessgame.html">Nameless Game</a>
+						<a href="http://localhost/jq/namelessgame.html">Harbinger</a>
 					</div>
 				</div>
 				<div class = "t-image" style = "position:relative;right:-10px;margin:auto;">
@@ -198,7 +229,7 @@
 				    	<img src="darkgame/01.png" alt="space" align = "left">
 					</a>
 					<p style = "position:relative;top:30px;">
-						Get to learn a little about my first project.
+						Look at my current project: a game about slaying Demons.
 					</p>
 				</div>
 			</p>
@@ -286,15 +317,8 @@
 		</table>
 			<?
 
-			//$query = "SHOW COLUMNS FROM names_tbl";$result = mysql_query($query)or die(mysql_error());
-
-			//echo "$result";
-
-
 
 			mysql_close($link);
-
-			//exit();
 		}
 	}
 		
@@ -303,19 +327,41 @@
 
 
 
-
 			
+		</div>
+		<div class = "blogWrapper">
+			<h1 id = "blog" >Development Blog</h1>
+				<script type="text/javascript">
+					var posts = ["Check back here for the latest development news!  Will be adding a comment feature to this devblog wall very soon but I do not have time right now!", "Test Post", "javascript is really really cool!"];
+					var iDiv = document.createElement('div');
+					//iDiv.id = 'block';
+
+					// Create the inner div before appending to the body
+					for (var i = 0; i < posts.length; i++) {
+						var innerDiv = document.createElement('div');
+						if((i%2) == 0)
+							innerDiv.className = 'bubble-speech bubble-left';
+						else 
+							innerDiv.className = 'bubble-speech bubble-right';
+
+						var authorDiv = document.createElement('div');
+						authorDiv.className = "author";
+						authorDiv.style.fontSize = 'medium'
+						authorDiv.innerHTML = "3/14/2016";
+
+						var messageDiv = document.createElement('div');
+						messageDiv.className = "message";
+						messageDiv.style.textAlign = "left";
+						messageDiv.style.fontSize = 'small';
+						messageDiv.innerHTML = posts[i];
+
+						innerDiv.appendChild(authorDiv);
+						innerDiv.appendChild(messageDiv);
+
+						iDiv.appendChild(innerDiv);
+					}
+					document.getElementById('blog').appendChild(iDiv);
+				</script>
 		</div>
 	</body>
 </html>
-
-
-
-<!--
-<div class="bgWrapper"></div>
-<div class="bgBird"></div>
-<div class="bgRoo"></div>
-
-<div class="mainWrapper">
-	<!--content in here-->
-<!--</div>-->

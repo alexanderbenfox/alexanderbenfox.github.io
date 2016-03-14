@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Space Game</title>
+		<title>Warp Hunter</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
 		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
@@ -8,13 +8,22 @@
 		html, body
 			{
 				height:100%;
-				margin: 0;
+				margin: 10px;
                 padding:0;
                 position:absolute;/* this is very important*/
                 bottom:0;
                 top:0;
                 right:0;
                 left:0;
+			}
+		ul
+			{
+ 				margin-left:30px;
+			}
+		p
+			{
+ 				margin-left:30px;
+ 				margin-right:30px;
 			}
 		.bg{
 				position:fixed;
@@ -28,7 +37,7 @@
 		.planetScroller{
 				position:fixed;
 				background:url(spacegame/planetimg.png) top center repeat-x;
-				top:100px;
+				margin-top: 150px;
 				display: block;
 				background-position: center;
 				margin-left: 300px;
@@ -75,12 +84,13 @@
 				background:url(spacegame/window_mid.png) bottom left repeat-y; 
 				background-size: 100% auto;
 				width:300px; 
-				text-align:center;
+				text-align:left;
 				padding:25px;
 				position:absolute;
 				/*right: 20px;*/
-				margin:15px auto;
-				margin-right: 0;
+				margin:10px auto;
+				margin-left: 20px;
+				padding-left: 50px;
 			}
 		.bottom {
 
@@ -107,39 +117,14 @@
 				background-size: 100% auto;
 				width:300px; 
 				border-radius:0px;
-				/*-moz-border-radius:10px;
-				-webkit-border-radius:10px;
-				-o-border-radius:10px;*/
-				/*background:#fff;
-				box-shadow:0px 0px 5px #000;
-				-moz-box-shadow:0px 0px 5px #000;
-				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;*/
-				text-align:center;
+				text-align:left;
 				padding:25px;
 				position:relative;
-				/*right: 20px;*/
 				margin:15px auto;
 				margin-right: 0;
 			}
-		.multiple-borders {
-		  -webkit-box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
-		  
-		     -moz-box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
-		  
-		          box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
+		li a{
+			color:red;
 		}
 		body{
 				font-family: 'silkscreennormal';
@@ -167,8 +152,8 @@
 						mountaintreesscroll = .3 * scrollFactor;
 						mountaintreesforegroundscroll = .2 * scrollFactor;
 			   		var scrolledY = $(window).scrollTop();
-					$('.bg').css('background-position','center -'+((scrolledY*.5))+'px');
-					$('.planetScroller').css('top','-'+((scrolledY*2))+'px');
+					$('.bg').css('background-position','center -'+((scrolledY*.1))+'px');
+					$('.planetScroller').css('top','-'+((scrolledY*.4))+'px');
 					
 					console.log(height);
 			   	}
@@ -191,9 +176,12 @@
 
 		<div class="secondaryWrapper" style = "color:white">
 			<img class = "top" src="spacegame/window_top.png" alt="space">
-			<h1>Space Game</h1>
+			<div class = "homeButton">
+				<a href="http://localhost/jq/index.php">HOME</a>
+			</div>
+			<h1>Warp Hunter</h1>
 		
-			<p>This is/was my first project - it's currently on indefinite hiatus.</p>
+			<p>Play as Arch, bred to serve the empire, she has turned rogue to uncover the truth and right the wrongs of her past.</p>
 
 			<div class="img" id = "border-img">
 			  <a target="_blank" href="spacegame/spacegif1.gif">
@@ -202,24 +190,36 @@
 			</div>
 
 			<p>
-
-				The goal for this game was to make a side scroller with high difficulty, but lots of movement options and combos - sort of like a fighting game.</p>
-
-			<p>I was heavily inspired by Bloodborne for this one because I had just begun development when Bloodborne came out - so I decided to make it a "Metroidvania set in the wild west".</p>
+				With only the memory of her service to the galactic empire in tact, Arch awakens deep in the catacombs of an alien life form.  To make your way out and regain your memories, you must fight through this alient planet and build a communication device, but the life forms of this new planet don't seem to like outsiders.
+			</p>
 
 			<div class = "img" id = "border-img">
 			  <a target="_blank" href="spacegame/spacegif2.gif">
 			    <img src="spacegame/spacegif2.gif" alt="space">
 			  </a>
 			</div>
+			<ul>
+				Game Features:
+				<li>Collect powerful upgrades to your blaster and blade</li>
+				<li>Metroidvania style worlds - each section is connected to the other parts</li>
+				<li>Full pixel art graphics</li>
+				<li>Hook shot and grapple mechanics</li>
+				<li>Mechanized robot gameplay sections</li>
+			</ul>
+			<p>This game has currently halted development</p>
 			<img class = "bottom" src="spacegame/window_bottom.png" alt="space">
 		</div>
 
 		<div class = "anotherWrapper" style = "color:white">
 			<img class = "top" src="spacegame/window_top.png" alt="space">
-						<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
-
-
+			<p> I did the least amount of work on this game, but it was a place for me to design a good hierarchical program structure that was not present in EHB: creating a game objects class that is the parent for all other classes in the game.  Tiled maps contained tile objects that could be extended to special tile classes, etc.</p>
+			<p>Major inspirations for this game include:</p>
+			<ul>
+				<li><a href="https://en.wikipedia.org/wiki/Super_Metroid">Super Metroid</a></li>
+				<li><a href="http://www.deathsgambit.com/">Death's Gambit</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Dead_Space_(2008_video_game)">Dead Space</a></li>
+			</ul>
+							
 			<div class="img2" id = "border-img">
 			  <a target="_blank" href="spacegame/IMG_0332.jpg">
 			    <img src="spacegame/IMG_0332.jpg" alt="space" width="400" height="266">
