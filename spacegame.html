@@ -5,47 +5,35 @@
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
 		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
 		<style type="text/css">
-		html, body
-			{
-				height:100%;
-				margin: 10px;
-                padding:0;
-                position:absolute;/* this is very important*/
-                bottom:0;
-                top:0;
-                right:0;
-                left:0;
-			}
-		ul
-			{
- 				margin-left:30px;
-			}
-		p
-			{
- 				margin-left:30px;
- 				margin-right:30px;
-			}
+
+		ul{
+ 			margin-left:30px;
+		}
+		p{
+			margin-left:30px;
+			margin-right:30px;
+		}
 		.bg{
-				position:fixed;
-				background:url(spacegame/space-background.png) bottom center no-repeat; 
-				background-size: 100% auto;
-				height:100%; 
-				width:100%;
-				top:0; 
-				left:0;
-			}
+			position:fixed;
+			background:url(spacegame/space-background.png) bottom center no-repeat; 
+			background-size: 100% auto;
+			height:100%; 
+			width:100%;
+			top:0; 
+			left:0;
+		}
 		.planetScroller{
-				position:fixed;
-				background:url(spacegame/planetimg.png) top center repeat-x;
-				margin-top: 150px;
-				display: block;
-				background-position: center;
-				margin-left: 300px;
-    			margin-right: auto;
-				width:600px;
-				background-size: 100% auto;
-				height:600px; 
-				left:0;
+			position:fixed;
+			background:url(spacegame/planetimg.png) top center repeat-x;
+			margin-top: 150px;
+			display: block;
+			background-position: center;
+			margin-left: 300px;
+			margin-right: auto;
+			width:600px;
+			background-size: 100% auto;
+			height:600px; 
+			left:0;
 		}
 		div.img {
 		    margin: 5px;
@@ -81,17 +69,17 @@
 		}
 
 		.secondaryWrapper{
-				background:url(spacegame/window_mid.png) bottom left repeat-y; 
-				background-size: 100% auto;
-				width:300px; 
-				text-align:left;
-				padding:25px;
-				position:absolute;
-				/*right: 20px;*/
-				margin:10px auto;
-				margin-left: 20px;
-				padding-left: 50px;
-			}
+			background:url(spacegame/window_mid.png) bottom left repeat-y; 
+			background-size: 100% auto;
+			width:300px; 
+			text-align:left;
+			padding:25px;
+			position:absolute;
+			/*right: 20px;*/
+			margin:10px auto;
+			margin-left: 20px;
+			padding-left: 50px;
+		}
 		.bottom {
 
 			width:350px; 
@@ -138,24 +126,11 @@
 			   	
 			   	
 			   	function parallaxScroll(){
-			   		var body = document.body,
-    					html = document.documentElement;
 
-					var height = Math.max(	body.scrollHeight, body.offsetHeight, 
-                       						html.clientHeight, html.scrollHeight, html.offsetHeight );
-
-					var scrollFactor = 850/height;
-
-					var backgroundscroll = .1 * scrollFactor;
-						closemountainscroll = .5 * scrollFactor;
-						farmountainscroll = .7 * scrollFactor;
-						mountaintreesscroll = .3 * scrollFactor;
-						mountaintreesforegroundscroll = .2 * scrollFactor;
 			   		var scrolledY = $(window).scrollTop();
 					$('.bg').css('background-position','center -'+((scrolledY*.1))+'px');
 					$('.planetScroller').css('top','-'+((scrolledY*.4))+'px');
 					
-					console.log(height);
 			   	}
 
 			   	
@@ -167,26 +142,22 @@
 
 		<div class = "bg"></div>
 		<div class = "planetScroller"></div>
-		<!-- <div class="bgWrapper"></div>
-		<div class="blackbar"></div>
-		<div class="farmountain"></div>
-		<div class="closemountain"></div>
-		<div class="mountaintrees"></div>
-		<div class="mountaintreesforeground"></div> -->
 
 		<div class="secondaryWrapper" style = "color:white">
 			<img class = "top" src="spacegame/window_top.png" alt="space">
+
 			<div class = "homeButton">
 				<a href="http://localhost/jq/index.php">HOME</a>
 			</div>
+
 			<h1>Warp Hunter</h1>
 		
 			<p>Play as Arch, bred to serve the empire, she has turned rogue to uncover the truth and right the wrongs of her past.</p>
 
 			<div class="img" id = "border-img">
-			  <a target="_blank" href="spacegame/spacegif1.gif">
-			    <img src="spacegame/spacegif1.gif" alt="space">
-			  </a>
+				<a target="_blank" href="spacegame/spacegif1.gif">
+			    	<img src="spacegame/spacegif1.gif" alt="space">
+			  	</a>
 			</div>
 
 			<p>
@@ -194,12 +165,11 @@
 			</p>
 
 			<div class = "img" id = "border-img">
-			  <a target="_blank" href="spacegame/spacegif2.gif">
-			    <img src="spacegame/spacegif2.gif" alt="space">
-			  </a>
+				<a target="_blank" href="spacegame/spacegif2.gif">
+			    	<img src="spacegame/spacegif2.gif" alt="space">
+			  	</a>
 			</div>
-			<ul>
-				Game Features:
+			<ul>Game Features:
 				<li>Collect powerful upgrades to your blaster and blade</li>
 				<li>Metroidvania style worlds - each section is connected to the other parts</li>
 				<li>Full pixel art graphics</li>
@@ -221,12 +191,12 @@
 			</ul>
 							
 			<div class="img2" id = "border-img">
-			  <a target="_blank" href="spacegame/IMG_0332.jpg">
-			    <img src="spacegame/IMG_0332.jpg" alt="space" width="400" height="266">
-
-			  </a>
-			  <div class="desc">Character Portrait</div>
+				<a target="_blank" href="spacegame/IMG_0332.jpg">
+			    	<img src="spacegame/IMG_0332.jpg" alt="space" width="400" height="266">
+			  	</a>
+			  	<div class="desc">Character Portrait</div>
 			</div>
+
 			<img class = "bottom" src="spacegame/window_bottom.png" alt="space">
 		</div>
 

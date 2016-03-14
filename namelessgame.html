@@ -5,17 +5,6 @@
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
 		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
 		<style type="text/css">
-		html, body
-			{
-				height:100%;
-				margin: 0;
-                padding:0;
-                position:absolute;/* this is very important*/
-                bottom:0;
-                top:0;
-                right:0;
-                left:0;
-			}
 
 		.bgWrapper{
 			position:fixed;
@@ -38,17 +27,13 @@
 			left:0;
 		}
 		.blackbar{
-				position:fixed;
-				background:url(darkgame/bar.png) bottom center no-repeat;
-				width:100%;
-				background-size: 100% auto;
-				height:100%; 
-				left:0;
-
-			/*	top:200px; */
-				/*margin-left:-600px;*/
-				/*margin-top:400px;*/
-			}
+			position:fixed;
+			background:url(darkgame/bar.png) bottom center no-repeat;
+			width:100%;
+			background-size: 100% auto;
+			height:100%; 
+			left:0;
+		}
 		div.img {
 		    margin: 5px;
 		    border: 1px solid #ccc;
@@ -72,98 +57,49 @@
 		}
 
 		.secondaryWrapper{
-				background:url(darkgame/border-img.png) top left repeat-y; 
-				background-size: 100% auto;
-				width:600px; 
-				border-radius:0px;
-				/*-moz-border-radius:10px;
-				-webkit-border-radius:10px;
-				-o-border-radius:10px;
-				background:#fff;
-				box-shadow:0px 0px 5px #000;
-				-moz-box-shadow:0px 0px 5px #000;
-				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;*/
-				text-align:center;
-				padding:25px;
-				position:relative;
-				/*right: 20px;*/
-				margin:auto;
-				/*margin:15px auto;
-				margin-right: 0;*/
-			}
+			background:url(darkgame/border-img.png) top left repeat-y; 
+			background-size: 100% auto;
+			width:600px; 
+			border-radius:0px;
+			text-align:center;
+			padding:25px;
+			position:relative;
+			margin:auto;
+		}
 		#border-img{
 			border: 20px solid transparent;
-/*    		padding: 15px;*/
 			-webkit-border-image: url(darkgame/border-img.png) 15 stretch; /* Safari 3.1-5 */
     		-o-border-image: url(darkgame/border-img.png) 15 stretch; /* Opera 11-12.1 */
     		border-image: url(darkgame/border-img.png) 15 stretch;
 		}
 		h1{
-				background:url(darkgame/border-img.png) top center repeat-y; 
-				background-size: 60% auto;
-				width:300px; 
-				border-radius:0px;
-				/*-moz-border-radius:10px;
-				-webkit-border-radius:10px;
-				-o-border-radius:10px;
-				background:#fff;
-				box-shadow:0px 0px 5px #000;
-				-moz-box-shadow:0px 0px 5px #000;
-				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;*/
-				text-align:center;
-				padding:25px;
-				position:relative;
-				/*right: 20px;*/
-				margin:auto;
-				/*margin:15px auto;
-				margin-right: 0;*/
-			}
-			.anotherWrapper{
-				background:url(darkgame/border-img.png) top left no-repeat; 
-				background-size: 100% auto;
-				width:600px; 
-				border-radius:0px;
-				-moz-border-radius:10px;
-				-webkit-border-radius:10px;
-				-o-border-radius:10px;
-				/*background:#fff;
-				box-shadow:0px 0px 5px #000;
-				-moz-box-shadow:0px 0px 5px #000;
-				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;*/
-				text-align:center;
-				padding:25px;
-				position:relative;
-				/*right: 20px;*/
-				margin:auto;
-				/*margin:15px auto;
-				margin-right: 0;*/
-			}
-		.multiple-borders {
-		  -webkit-box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
-		  
-		     -moz-box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
-		  
-		          box-shadow:
-		     0px 0px 0px 2px rgba(0,0,0,0.6),
-		                0px 0px 0px 14px #fff,
-		                0px 0px 0px 18px rgba(0,0,0,0.2),
-		                6px 6px 8px 17px #555;
+			background:url(darkgame/border-img.png) top center repeat-y; 
+			background-size: 60% auto;
+			width:300px; 
+			border-radius:0px;
+			text-align:center;
+			padding:25px;
+			position:relative;
+			margin:auto;
+		}
+		.anotherWrapper{
+			background:url(darkgame/border-img.png) top left no-repeat; 
+			background-size: 100% auto;
+			width:600px; 
+			border-radius:0px;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			-o-border-radius:10px;
+			text-align:center;
+			padding:25px;
+			position:relative;
+			margin:auto;
 		}
 
 		body{
-				font-family: 'silkscreennormal';
-			}
+			font-family: 'silkscreennormal';
+		}
+		
 		</style>
 		<script>
 			$(document).ready(function(){
@@ -219,8 +155,6 @@
 		<div class="farmountain"></div>
 		<div class="blackbar"></div>
 		<div class="closemountain"></div>
-		<!-- <div class="mountaintrees"></div>
-		<div class="mountaintreesforeground"></div> -->
 		<div class="secondaryWrapper">
 			<div class = "homeButton">
 			<a href="http://localhost/jq/index.php">HOME</a>
@@ -269,7 +203,7 @@
 			</div>
 			<p style = "margin-top:200px">Learning how to navigate the world is a must - skeletons will rise from the ground, necromancers hide around every corner, and possessed guardians lay in wait with blades at the ready.  You, as Baldwin, are always ready and cannot let fear consume you!</p>
 			<h1 style = "margin-top:100px">Features</h1>
-			<ul>
+			<ul style = "text-align:left;">
 				<li>Extensive subweapon system</li>
 				<li>Action-RPG gameplay and leveling - but with upgrades comes new challenges</li>
 				<li>Metroidvania style worlds - each section is connected to the other parts in a flowing manner to make the world seem more realistic</li>
