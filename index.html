@@ -1,3 +1,5 @@
+
+
 <html>
 	<head>
 		<title>jQuery Parallax Scrolling Demo</title>
@@ -42,6 +44,102 @@
 			<p>Here is my page on <a href="http://localhost/jq/spacegame.html">Space Game</a>.</p>
 
 			<p>Here is my page on <a href="http://localhost/jq/namelessgame.html">Nameless Game</a>.</p>
+
+			<form action = "index.html" method = "GET">
+         		Name: <input type = "text" name = "name" />
+        		E-mail: <input type = "text" name = "email" />
+        		Favorite Game: <input type = "text" name = "fav_game" />
+        		<input type = "submit" />
+      		</form>
+
+
+<?
+	if(isset($_GET['name'])){
+		$name = $_GET['name'];
+		$email = $_GET['email'];
+		$fav_game = $_GET['fav_game'];
+
+		if(!$_GET['name']){
+	 		exit();
+		}else{
+			$host = "localhost";
+			$user = "root";
+			$pass = "";
+			$link = mysql_connect($host, $user, $pass);
+			mysql_select_db("test",$link);
+
+			$query_name = "SELECT name FROM mailinglist_tbl WHERE " . 'name' ." = ".'"'."$name".'"'.";";
+			$query_email = "SELECT email FROM mailinglist_tbl WHERE " . 'email' ." = ".'"'."$email".'"'.";";
+			$query_game = "SELECT fav_game FROM mailinglist_tbl WHERE " . 'fav_game' ." = ".'"'."$fav_game".'"'.";";
+
+			$name_result = mysql_query($query_name) or die(mysql_error());
+			$email_result = mysql_query($query_email) or die(mysql_error());
+			$game_result = mysql_query($query_game) or die(mysql_error());
+
+			$thenum = mysql_num_rows($name_result);
+
+			if(mysql_num_rows($name_result) == 0 and mysql_num_rows($name_result)){
+				//row wasn't found - we can add it
+				$command = "INSERT INTO mailinglist_tbl (name, email, fav_game) VALUES (".'"'."$name".'",'.'"'."$email".'",'.'"'."$fav_game".'"'.");";
+				echo "FUCK";
+				mysql_query($command, $link)or die(mysql_error());
+
+			} else {
+				echo "fuck";
+				//row was found - don't add it
+
+			}
+
+			$query = "SELECT * FROM mailinglist_tbl";$result = mysql_query($query)or die(mysql_error());
+			$num = mysql_num_rows($result);
+?>
+			<table border = "1" align = "center">
+							<tr align = "center">
+         	<td>
+         </td>
+         <td> NAME </td>
+         <td> EMAIL </td> 
+         <td> FAVORITE GAME </td> 
+         </tr>
+<?
+			$array = array();
+			for($i = 0; $i<$num; $i++){
+				$show_name = mysql_result($result,$i,"name")or die(mysql_error());
+				$show_email = mysql_result($result,$i,"email")or die(mysql_error());
+				$show_fav_game = mysql_result($result,$i,"fav_game")or die(mysql_error());
+?>
+			<tr align = "center">
+         	<td>
+         </td>
+         <td> <?php echo $show_name;?> </td>
+         <td> <?php echo $show_email;?> </td> 
+         <td> <?php echo $show_fav_game;?> </td> 
+         </tr>
+<?
+							//array_push($array, $show_lname, $show_fname);
+			}
+			?>
+		</table>
+			<?
+
+			//$query = "SHOW COLUMNS FROM names_tbl";$result = mysql_query($query)or die(mysql_error());
+
+			//echo "$result";
+
+
+
+			mysql_close($link);
+
+			//exit();
+		}
+	}
+		
+
+?>
+
+
+
+
 			
 		</div>
 	</body>

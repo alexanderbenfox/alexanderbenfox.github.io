@@ -3,7 +3,8 @@
 		<title>Nameless Game</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
-		<style>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+		<style type="text/css">
 		html, body
 			{
 				height:100%;
@@ -14,6 +15,41 @@
                 top:0;
                 right:0;
                 left:0;
+			}
+
+		.bgWrapper{
+			position:fixed;
+			background:url(darkgame/bg1.png) bottom center no-repeat; 
+			background-size: 100% auto;
+			height:100%; 
+			width:100%;
+		}
+		.farmountain{
+			position:fixed;
+			background:url(darkgame/bg2.png) bottom center no-repeat;
+			width:100%;
+			background-size: 100% auto;
+			left:0;
+		}
+		.closemountain{
+			position:fixed;
+			background:url(darkgame/bg3.png) bottom center no-repeat;
+			width:100%;
+			background-size: 100% auto;
+			height:100%; 
+			left:0;
+		}
+		.blackbar{
+				position:fixed;
+				background:url(darkgame/bar.png) bottom center no-repeat;
+				width:100%;
+				background-size: 100% auto;
+				height:100%; 
+				left:0;
+
+			/*	top:200px; */
+				/*margin-left:-600px;*/
+				/*margin-top:400px;*/
 			}
 		div.img {
 		    margin: 5px;
@@ -32,27 +68,74 @@
 		}
 
 		div.desc {
+			background-color: #000;
 		    padding: 15px;
 		    text-align: center;
 		}
 
 		.secondaryWrapper{
-				width:400px; 
+				background:url(darkgame/border-img.png) top left repeat-y; 
+				background-size: 100% auto;
+				width:600px; 
 				border-radius:0px;
-				-moz-border-radius:10px;
+				/*-moz-border-radius:10px;
 				-webkit-border-radius:10px;
 				-o-border-radius:10px;
 				background:#fff;
 				box-shadow:0px 0px 5px #000;
 				-moz-box-shadow:0px 0px 5px #000;
 				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;*/
 				text-align:center;
 				padding:25px;
-				position:absolute;
+				position:relative;
 				/*right: 20px;*/
-				margin:15px auto;
-				margin-right: 0;
+				margin:auto;
+				/*margin:15px auto;
+				margin-right: 0;*/
+			}
+			.anotherWrapper{
+				background:url(darkgame/border-img.png) top left no-repeat; 
+				background-size: 100% auto;
+				width:600px; 
+				border-radius:0px;
+				-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				-o-border-radius:10px;
+				/*background:#fff;
+				box-shadow:0px 0px 5px #000;
+				-moz-box-shadow:0px 0px 5px #000;
+				-webkit-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;*/
+				text-align:center;
+				padding:25px;
+				position:relative;
+				/*right: 20px;*/
+				margin:auto;
+				/*margin:15px auto;
+				margin-right: 0;*/
+			}
+		.multiple-borders {
+		  -webkit-box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		  
+		     -moz-box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		  
+		          box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		}
+		body{
+				font-family: 'silkscreennormal';
 			}
 		</style>
 		<script>
@@ -63,12 +146,30 @@
 			   	
 			   	
 			   	function parallaxScroll(){
+			   		var body = document.body,
+    					html = document.documentElement;
+
+					var height = Math.max(	body.scrollHeight, body.offsetHeight, 
+                       						html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+					var scrollFactor = 850/height;
+
+					var backgroundscroll = .1 * scrollFactor;
+						closemountainscroll = .5 * scrollFactor;
+						farmountainscroll = .7 * scrollFactor;
+						mountaintreesscroll = .45 * scrollFactor;
+						mountaintreesforegroundscroll = .2 * scrollFactor;
+
+					var baroffset = $('.mountaintrees').height();
+
 			   		var scrolledY = $(window).scrollTop();
-					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
-					$('.closemountain').css('top','-'+((scrolledY*0.5))+'px');
-					$('.farmountain').css('top','-'+((scrolledY*0.7))+'px');
-					$('.mountaintrees').css('top','-'+((scrolledY*0.3))+'px');
-					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.2))+'px');
+					$('.bgWrapper').css('background-position','center -'+((scrolledY*.2))+'px');
+					$('.closemountain').css('top','-'+((scrolledY*.1))+'px');
+					$('.farmountain').css('top','-'+((scrolledY*.15))+'px');
+					$('.mountaintrees').css('top','-'+((scrolledY*mountaintreesscroll))+'px');
+					$('.mountaintreesforeground').css('top','-'+((scrolledY*mountaintreesforegroundscroll))+'px');
+					
+					console.log(scrolledY);
 			   	}
 
 			   	
@@ -79,11 +180,11 @@
 		
 
 		<div class="bgWrapper"></div>
-		<div class="blackbar"></div>
 		<div class="farmountain"></div>
+		<div class="blackbar"></div>
 		<div class="closemountain"></div>
-		<div class="mountaintrees"></div>
-		<div class="mountaintreesforeground"></div>
+		<!-- <div class="mountaintrees"></div>
+		<div class="mountaintreesforeground"></div> -->
 
 		<div class="secondaryWrapper">
 			<h1>Nameless Game</h1>
@@ -104,42 +205,50 @@
 
 			<div class="img">
 			  <a target="_blank" href="darkgame/darkgamegif1.gif">
-			    <img src="darkgame/darkgamegif1.gif" alt="space" width="600" height="400">
+			    <img src="darkgame/darkgamegif1.gif" alt="space" align = "center">
 			  </a>
 			</div>
 
 			<div class="img">
 			  <a target="_blank" href="darkgame/darkgamegif2.gif">
-			    <img src="darkgame/darkgamegif2.gif" alt="space" width="600" height="400">
+			    <img src="darkgame/darkgamegif2.gif" alt="space" align = "center">
 			  </a>
 			</div>
 
 			<div class="img">
 			  <a target="_blank" href="darkgame/darkgamegif3.gif">
-			    <img src="darkgame/darkgamegif3.gif" alt="space" width="600" height="400">
+			    <img src="darkgame/darkgamegif3.gif" alt="space" align = "center">
 			  </a>
 			</div>
+			<p>lffffffffffdasdfasdfasdd</p>
 
-			<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
+		</div>
+		<div class = "anotherWrapper">
+		<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
 
+			<div style = "color:red">
 			<div class="img">
 			  <a target="_blank" href="darkgame/IMG_0324.jpg">
-			    <img src="darkgame/IMG_0324.jpg" alt="space" width="600" height="400">
+			    <img src="darkgame/IMG_0324.jpg" height = "100" width = "100" alt="space">
 			  </a>
+			  <div class="desc">Glum victorian town. Concept Art</div>
 			</div>
 
 			<div class="img">
 			  <a target="_blank" href="darkgame/IMG_0325.jpg">
-			    <img src="darkgame/IMG_0325.jpg" alt="space" width="600" height="400">
+			    <img src="darkgame/IMG_0325.jpg" height = "100" width = "100"  alt="space">
 			  </a>
+			  <div class="desc">Glum victorian town. Concept Art</div>
 			</div>
 
 			<div class="img">
 			  <a target="_blank" href="darkgame/IMG_0326.jpg">
-			    <img src="darkgame/IMG_0326.jpg" alt="space" width="600" height="400">
+			    <img src="darkgame/IMG_0326.jpg" height = "100" width = "100"  alt="space" >
 			  </a>
+			  <div class="desc">Glum victorian town. Concept Art</div>
 			</div>
-			
+		</div>
+			<p>lol</p>
 		</div>
 
 

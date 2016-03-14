@@ -3,7 +3,8 @@
 		<title>Space Game</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
-		<style>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+		<style type="text/css">
 		html, body
 			{
 				height:100%;
@@ -15,11 +16,44 @@
                 right:0;
                 left:0;
 			}
+		.bg{
+				position:fixed;
+				background:url(spacegame/space-background.png) bottom center no-repeat; 
+				background-size: 100% auto;
+				height:100%; 
+				width:100%;
+				top:0; 
+				left:0;
+			}
+		.planetScroller{
+				position:fixed;
+				background:url(spacegame/planetimg.png) top center repeat-x;
+				top:100px;
+				display: block;
+				background-position: center;
+				margin-left: 300px;
+    			margin-right: auto;
+				width:600px;
+				background-size: 100% auto;
+				height:600px; 
+				left:0;
+		}
 		div.img {
 		    margin: 5px;
 		    border: 1px solid #ccc;
 		    float: left;
 		    width: 400px;
+		}
+		div.img2 {
+		    margin: 5px;
+		    border: 1px solid #ccc;
+		    float: left;
+		    width: 300px;
+		    margin-top: 100px;
+		}
+		div.img2 img {
+		    width: 100%;
+		    height: auto;
 		}
 
 		div.img:hover {
@@ -34,25 +68,81 @@
 		div.desc {
 		    padding: 15px;
 		    text-align: center;
+		    background:#000;
 		}
 
 		.secondaryWrapper{
-				width:400px; 
-				border-radius:0px;
-				-moz-border-radius:10px;
-				-webkit-border-radius:10px;
-				-o-border-radius:10px;
-				background:#fff;
-				box-shadow:0px 0px 5px #000;
-				-moz-box-shadow:0px 0px 5px #000;
-				-webkit-box-shadow:0px 0px 5px #000;
-				-o-box-shadow:0px 0px 5px #000;
+				background:url(spacegame/window_mid.png) bottom left repeat-y; 
+				background-size: 100% auto;
+				width:300px; 
 				text-align:center;
 				padding:25px;
 				position:absolute;
 				/*right: 20px;*/
 				margin:15px auto;
 				margin-right: 0;
+			}
+		.bottom {
+
+			width:350px; 
+			position: absolute;
+		    left: 0;
+		    bottom: 0;
+		}
+		.top {
+			width:350px; 
+			position: absolute;
+		    left: 0;
+		    top:0;
+		}
+		#border-img{
+			border: 10px solid transparent;
+/*    		padding: 15px;*/
+			-webkit-border-image: url(spacegame/img_border.png) 7 stretch; /* Safari 3.1-5 */
+    		-o-border-image: url(spacegame/img_border.png) 7 stretch; /* Opera 11-12.1 */
+    		border-image: url(spacegame/img_border.png) 7 stretch;
+		}
+		.anotherWrapper{
+				background:url(spacegame/window_mid.png) bottom left repeat-x;
+				background-size: 100% auto;
+				width:300px; 
+				border-radius:0px;
+				/*-moz-border-radius:10px;
+				-webkit-border-radius:10px;
+				-o-border-radius:10px;*/
+				/*background:#fff;
+				box-shadow:0px 0px 5px #000;
+				-moz-box-shadow:0px 0px 5px #000;
+				-webkit-box-shadow:0px 0px 5px #000;
+				-o-box-shadow:0px 0px 5px #000;*/
+				text-align:center;
+				padding:25px;
+				position:relative;
+				/*right: 20px;*/
+				margin:15px auto;
+				margin-right: 0;
+			}
+		.multiple-borders {
+		  -webkit-box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		  
+		     -moz-box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		  
+		          box-shadow:
+		     0px 0px 0px 2px rgba(0,0,0,0.6),
+		                0px 0px 0px 14px #fff,
+		                0px 0px 0px 18px rgba(0,0,0,0.2),
+		                6px 6px 8px 17px #555;
+		}
+		body{
+				font-family: 'silkscreennormal';
 			}
 		</style>
 		<script>
@@ -63,12 +153,24 @@
 			   	
 			   	
 			   	function parallaxScroll(){
+			   		var body = document.body,
+    					html = document.documentElement;
+
+					var height = Math.max(	body.scrollHeight, body.offsetHeight, 
+                       						html.clientHeight, html.scrollHeight, html.offsetHeight );
+
+					var scrollFactor = 850/height;
+
+					var backgroundscroll = .1 * scrollFactor;
+						closemountainscroll = .5 * scrollFactor;
+						farmountainscroll = .7 * scrollFactor;
+						mountaintreesscroll = .3 * scrollFactor;
+						mountaintreesforegroundscroll = .2 * scrollFactor;
 			   		var scrolledY = $(window).scrollTop();
-					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
-					$('.closemountain').css('top','-'+((scrolledY*0.5))+'px');
-					$('.farmountain').css('top','-'+((scrolledY*0.7))+'px');
-					$('.mountaintrees').css('top','-'+((scrolledY*0.3))+'px');
-					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.2))+'px');
+					$('.bg').css('background-position','center -'+((scrolledY*.5))+'px');
+					$('.planetScroller').css('top','-'+((scrolledY*2))+'px');
+					
+					console.log(height);
 			   	}
 
 			   	
@@ -78,21 +180,24 @@
 	<body>
 		
 
-		<div class="bgWrapper"></div>
+		<div class = "bg"></div>
+		<div class = "planetScroller"></div>
+		<!-- <div class="bgWrapper"></div>
 		<div class="blackbar"></div>
 		<div class="farmountain"></div>
 		<div class="closemountain"></div>
 		<div class="mountaintrees"></div>
-		<div class="mountaintreesforeground"></div>
+		<div class="mountaintreesforeground"></div> -->
 
-		<div class="secondaryWrapper">
+		<div class="secondaryWrapper" style = "color:white">
+			<img class = "top" src="spacegame/window_top.png" alt="space">
 			<h1>Space Game</h1>
 		
 			<p>This is/was my first project - it's currently on indefinite hiatus.</p>
 
-			<div class="img">
+			<div class="img" id = "border-img">
 			  <a target="_blank" href="spacegame/spacegif1.gif">
-			    <img src="spacegame/spacegif1.gif" alt="space" width="600" height="400">
+			    <img src="spacegame/spacegif1.gif" alt="space">
 			  </a>
 			</div>
 
@@ -102,20 +207,27 @@
 
 			<p>I was heavily inspired by Bloodborne for this one because I had just begun development when Bloodborne came out - so I decided to make it a "Metroidvania set in the wild west".</p>
 
-			<div class="img">
+			<div class = "img" id = "border-img">
 			  <a target="_blank" href="spacegame/spacegif2.gif">
-			    <img src="spacegame/spacegif2.gif" alt="space" width="600" height="400">
+			    <img src="spacegame/spacegif2.gif" alt="space">
 			  </a>
 			</div>
+			<img class = "bottom" src="spacegame/window_bottom.png" alt="space">
+		</div>
 
-			<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
+		<div class = "anotherWrapper" style = "color:white">
+			<img class = "top" src="spacegame/window_top.png" alt="space">
+						<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
 
-			<div class="img">
+
+			<div class="img2" id = "border-img">
 			  <a target="_blank" href="spacegame/IMG_0332.jpg">
-			    <img src="spacegame/IMG_0332.jpg" alt="space" width="600" height="400">
+			    <img src="spacegame/IMG_0332.jpg" alt="space" width="400" height="266">
+
 			  </a>
+			  <div class="desc">Character Portrait</div>
 			</div>
-			
+			<img class = "bottom" src="spacegame/window_bottom.png" alt="space">
 		</div>
 
 

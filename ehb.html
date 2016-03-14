@@ -3,7 +3,8 @@
 		<title>Edward Headbedwardly/Project Torchman</title>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 		<link rel = "stylesheet" type = "text/css" href= "parallaxelements.css">
-		<style>
+		<link rel="stylesheet" href="stylesheet.css" type="text/css" charset="utf-8" />
+		<style type="text/css">
 		html, body
 			{
 				height:100%;
@@ -32,6 +33,7 @@
 		}
 
 		div.desc {
+			font-family: 'silkscreennormal';
 		    padding: 15px;
 		    text-align: center;
 		}
@@ -54,6 +56,9 @@
 				/*margin:15px auto;*/
 				margin-right: 0;
 			}
+		body{
+				font-family: 'silkscreennormal';
+			}
 		</style>
 		<script>
 			$(document).ready(function(){
@@ -63,12 +68,24 @@
 			   	
 			   	
 			   	function parallaxScroll(){
+			   		var body = document.body,
+    					html = document.documentElement;
+
+					var height = Math.max(	body.scrollHeight, body.offsetHeight, 
+                       						html.clientHeight, html.scrollHeight, html.offsetHeight );
+					var backgroundscroll = .1;
+						closemountainscroll = .5;
+						farmountainscroll = .7;
+						mountaintreesscroll = .3;
+						mountaintreesforegroundscroll = .2;
 			   		var scrolledY = $(window).scrollTop();
-					$('.bgWrapper').css('background-position','center -'+((scrolledY*0.1))+'px');
-					$('.closemountain').css('top','-'+((scrolledY*0.5))+'px');
-					$('.farmountain').css('top','-'+((scrolledY*0.7))+'px');
-					$('.mountaintrees').css('top','-'+((scrolledY*0.3))+'px');
-					$('.mountaintreesforeground').css('top','-'+((scrolledY*0.2))+'px');
+					$('.bgWrapper').css('background-position','center -'+((scrolledY*backgroundscroll))+'px');
+					$('.closemountain').css('top','-'+((scrolledY*closemountainscroll))+'px');
+					$('.farmountain').css('top','-'+((scrolledY*farmountainscroll))+'px');
+					$('.mountaintrees').css('top','-'+((scrolledY*mountaintreesscroll))+'px');
+					$('.mountaintreesforeground').css('top','-'+((scrolledY*mountaintreesforegroundscroll))+'px');
+
+					console.log(height);
 			   	}
 
 			   	
@@ -86,13 +103,17 @@
 		<div class="mountaintreesforeground"></div>
 
 		<div class="mainWrapper">
-			<h1>Edward Headbedwardly/Project Torchman</h1>
+			<h1 style = "position:relative;text-align:center;">Edward Headbedwardly/ Project Torchman</h1>
+
+			<a target="_blank" href="ehb/ehb2.jpg">
+				<img src="ehb/ehb2.jpg" alt="space" align = "left">
+			</a>
 		
-			<p>This is/was my first project - it's currently on indefinite hiatus.</p>
+			<p>Edward Headbedwardly was a sleepy cowboy thrown into a terrible nightmare! You are just a simple doctor, called to a strange town to investigate a peculiar plague that haunts the citizens... As you go further into the town's strange surroundings: underground libraries, reminants of cultist rituals in the clock tower, and ruins of a forgotten civilization deep in the desert, you realize that there's more to this town, and this plague, that meets the eye.</p>
 
-			<p>The goal for this game was to make a side scroller with high difficulty, but lots of movement options and combos - sort of like a fighting game.</p>
+			<p>By utilizing your magical candle and trusty pistol, you can bring light into this dark world.  Given to you by an eerie fortune teller, your candle can transform it's flame into any weapon that you can find.  The cards created during dark rituals give the flame power.</p>
 
-			<p>I was heavily inspired by Bloodborne for this one because I had just begun development when Bloodborne came out - so I decided to make it a "Metroidvania set in the wild west".</p>
+			<p>Set in a frontier town, Edward Headbedwardly is a .</p>
 
 			<p>The sprite-work and audio design became a little too much for me so I halted development during school finals and never came back - I may continue working if I got some help.  You can check out the umoga page <a href="http://www.umoga.com/project/project-torchman">here</a>.</p>
 			
