@@ -1,0 +1,111 @@
+ul{
+	margin-left:30px;
+}
+p{
+	margin-left:30px;
+	margin-right:30px;
+}
+.bg{
+	position:fixed;
+	background:url(../assets/space-background.png) bottom center no-repeat; 
+	background-size: 100% auto;
+	height:100%; 
+	width:100%;
+	top:0; 
+	left:0;
+}
+.planetScroller{
+	position:fixed;
+	background:url(../assets/planetimg.png) top center repeat-x;
+	margin-top: 150px;
+	display: block;
+	background-position: center;
+	margin-left: 300px;
+	margin-right: auto;
+	width:600px;
+	background-size: 100% auto;
+	height:600px; 
+	left:0;
+}
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 400px;
+}
+div.img2 {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+    margin-top: 100px;
+}
+div.img2 img {
+    width: 100%;
+    height: auto;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+    background:#000;
+}
+
+.secondaryWrapper{
+	background:url(../assets/window_mid.png) bottom left repeat-y; 
+	background-size: 100% auto;
+	width:300px; 
+	text-align:left;
+	padding:25px;
+	position:absolute;
+	/*right: 20px;*/
+	margin:10px auto;
+	margin-left: 20px;
+	padding-left: 50px;
+}
+.bottom {
+
+	width:350px; 
+	position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.top {
+	width:350px; 
+	position: absolute;
+    left: 0;
+    top:0;
+}
+#border-img{
+	border: 10px solid transparent;
+/*    		padding: 15px;*/
+	-webkit-border-image: url(../assets/img_border.png) 7 stretch; /* Safari 3.1-5 */
+	-o-border-image: url(../assets/img_border.png) 7 stretch; /* Opera 11-12.1 */
+	border-image: url(../assets/img_border.png) 7 stretch;
+}
+.anotherWrapper{
+		background:url(../assets/window_mid.png) bottom left repeat-x;
+		background-size: 100% auto;
+		width:300px; 
+		border-radius:0px;
+		text-align:left;
+		padding:25px;
+		position:relative;
+		margin:15px auto;
+		margin-right: 0;
+	}
+li a{
+	color:red;
+}
+body{
+	font-family: 'silkscreennormal';
+}

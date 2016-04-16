@@ -1,0 +1,33 @@
+PROJECT PART2 REQUIREMENTS:
+
+	- Organize files in a file tree
+	  - CSS in it's own, js in it's own, etc.
+
+	- Code Formatting:
+	  - No debug code
+	  - Only comment on functionality
+	  - Beautifier *
+
+	- JS functions
+
+
+	- THIS IS HOW HE WANTS IT DONE!
+
+	function superAwesomeFunction(){
+	  //super global variable
+	  loc = window.location;
+
+	  //all ways to declare arrays
+	  var arr = [] || new Array() || Array();
+	  var obj = {}
+
+	  $.each(arr, function() {
+	    if (!arr.length) {
+	      arr.push('aint\'t empty now, huh');
+	    }
+	  });
+
+	  for (var i = arr.length - 1; i >= 0; i--) {
+	    return "is it empty? " + arr[i];
+	  };
+	}

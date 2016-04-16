@@ -1,0 +1,93 @@
+.bgWrapper{
+	position:fixed;
+	background:url(../assets/bg1.png) top center no-repeat; 
+	background-size: 100% auto;
+}
+.farmountain{
+	position:fixed;
+	background:url(../assets/bg2.png) bottom center no-repeat;
+	width:100%;
+	background-size: 100% auto;
+	left:0;
+}
+.closemountain{
+	position:fixed;
+	background:url(../assets/bg3.png) bottom center no-repeat;
+	width:100%;
+	background-size: 100% auto;
+	height:100%; 
+	left:0;
+}
+.blackbar{
+	position:fixed;
+	background:url(../assets/bar.png) bottom center no-repeat;
+	width:100%;
+	background-size: 100% auto;
+	height:100%; 
+	left:0;
+}
+div.img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 300px;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+	background-color: #000;
+    padding: 15px;
+    text-align: center;
+}
+
+.secondaryWrapper{
+	background:url(../assets/border-img.png) top left repeat-y; 
+	background-size: 100% auto;
+	width:600px; 
+	border-radius:0px;
+	text-align:center;
+	padding:25px;
+	position:relative;
+	margin:auto;
+}
+#border-img{
+	border: 20px solid transparent;
+	-webkit-border-image: url(../assets/border-img.png) 15 stretch; /* Safari 3.1-5 */
+	-o-border-image: url(../assets/border-img.png) 15 stretch; /* Opera 11-12.1 */
+	border-image: url(../assets/border-img.png) 15 stretch;
+}
+h1{
+	background:url(../assets/border-img.png) top center repeat-y; 
+	background-size: 60% auto;
+	width:300px; 
+	border-radius:0px;
+	text-align:center;
+	padding:25px;
+	position:relative;
+	margin:auto;
+}
+.anotherWrapper{
+	background:url(../assets/border-img.png) top left no-repeat; 
+	background-size: 100% auto;
+	width:600px; 
+	border-radius:0px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	-o-border-radius:10px;
+	text-align:center;
+	padding:25px;
+	position:relative;
+	margin:auto;
+}
+
+body{
+	font-family: 'silkscreennormal';
+}

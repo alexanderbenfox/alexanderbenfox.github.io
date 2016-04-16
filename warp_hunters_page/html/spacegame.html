@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Warp Hunter</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+		<link rel = "stylesheet" type = "text/css" href= "../../general_use/css/parallaxelements.css">
+		<link rel="stylesheet" href="../../general_use/css/font_ss.css" type="text/css" charset="utf-8" />
+		<link rel="stylesheet" href="../css/warp_hunters_ss.css" type="text/css" charset="utf-8"/>
+		<script>
+			$(document).ready(function(){
+				$(window).bind('scroll',function(e){
+			   		parallaxScroll();
+			   	});
+			   	function parallaxScroll(){
+			   		var scrolledY = $(window).scrollTop();
+					$('.bg').css('background-position','center -'+((scrolledY*.1))+'px');
+					$('.planetScroller').css('top','-'+((scrolledY*.4))+'px');	
+			   	}
+			});
+		</script>
+	</head>
+	<body>
+		
+
+		<div class = "bg"></div>
+		<div class = "planetScroller"></div>
+
+		<div class="secondaryWrapper" style = "color:white">
+			<img class = "top" src="../assets/window_top.png" alt="space">
+
+			<div class = "homeButton">
+				<a href="../../index/php/index.php">HOME</a>
+			</div>
+
+			<h1>Warp Hunter</h1>
+		
+			<p>Play as Arch, bred to serve the empire, she has turned rogue to uncover the truth and right the wrongs of her past.</p>
+
+			<div class="img" id = "border-img">
+				<a target="_blank" href="../assets/spacegif1.gif">
+			    	<img src="../assets/spacegif1.gif" alt="space">
+			  	</a>
+			</div>
+
+			<p>
+				With only the memory of her service to the galactic empire in tact, Arch awakens deep in the catacombs of an alien life form.  To make your way out and regain your memories, you must fight through this alient planet and build a communication device, but the life forms of this new planet don't seem to like outsiders.
+			</p>
+
+			<div class = "img" id = "border-img">
+				<a target="_blank" href="../assets/spacegif2.gif">
+			    	<img src="../assets/spacegif2.gif" alt="space">
+			  	</a>
+			</div>
+			<ul>Game Features:
+				<li>Collect powerful upgrades to your blaster and blade</li>
+				<li>Metroidvania style worlds - each section is connected to the other parts</li>
+				<li>Full pixel art graphics</li>
+				<li>Hook shot and grapple mechanics</li>
+				<li>Mechanized robot gameplay sections</li>
+			</ul>
+			<p>This game has currently halted development</p>
+			<img class = "bottom" src="../assets/window_bottom.png" alt="space">
+		</div>
+
+		<div class = "anotherWrapper" style = "color:white">
+			<img class = "top" src="../assets/window_top.png" alt="space">
+			<p> I did the least amount of work on this game, but it was a place for me to design a good hierarchical program structure that was not present in EHB: creating a game objects class that is the parent for all other classes in the game.  Tiled maps contained tile objects that could be extended to special tile classes, etc.</p>
+			<p>Major inspirations for this game include:</p>
+			<ul>
+				<li><a href="https://en.wikipedia.org/wiki/Super_Metroid">Super Metroid</a></li>
+				<li><a href="http://www.deathsgambit.com/">Death's Gambit</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Dead_Space_(2008_video_game)">Dead Space</a></li>
+			</ul>
+							
+			<div class="img2" id = "border-img">
+				<a target="_blank" href="../assets/IMG_0332.jpg">
+			    	<img src="../assets/IMG_0332.jpg" alt="space" width="400" height="266">
+			  	</a>
+			  	<div class="desc">Character Portrait</div>
+			</div>
+
+			<img class = "bottom" src="../assets/window_bottom.png" alt="space">
+		</div>
+
+
+	</body>
+</html>
