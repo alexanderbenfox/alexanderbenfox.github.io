@@ -29,8 +29,6 @@ $(document).ready(function(){
 		{
 			$('.blackbar').css('background-size',' 100% auto');
 		}
-
-		console.log(scrolledY);
    	}
 
    	

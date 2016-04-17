@@ -21,8 +21,12 @@ div.desc {
     text-align: center;
 }
 
+.fade img{
+	width: 300px;
+}
+
 .galleryWrapper{
-	width:300px; 
+	width: 300px;
 	border-radius:0px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -41,6 +45,11 @@ div.desc {
 	float:right;
 	top:-700px;
 }
+
+.galleryWrapper img{
+	width: 300px;
+}
+
 body{
 	font-family: 'silkscreennormal';
 }
