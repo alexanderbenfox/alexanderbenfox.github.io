@@ -1,10 +1,11 @@
 $(document).ready(function(){
 	$('.fade').slick({
-		dots: true,
+		dots: false,
 		infinite: true,
 		speed: 500,
 		fade: true,
 		cssEase: 'linear',
-		adaptiveHeight: true,
+		prevArrow: $('.prev'),
+        nextArrow: $('.next'),
 	});
 });

@@ -12,17 +12,12 @@
 
 }
 
-body{
-	/*text-align:center;
-	font-family: 'silkscreennormal';*/
-}
-
 html, body
 {
 	height:100%;
 	margin: 0;
     padding:0;
-    position:absolute;/* this is very important*/
+    position:absolute;
     bottom:0;
     top:0;
     right:0;
@@ -45,13 +40,11 @@ html, body
 	-webkit-box-shadow:0px 0px 5px #000;
 	-o-box-shadow:0px 0px 5px #000;
 	text-align: center;
-	/*margin:15px auto;*/
 	margin-left: 0;
 }
 
 .mainWrapper{
-	/*font-family: Silk, sans-serif;*/
-	width:400px; 
+	width:35%; 
 	border-radius:10px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -64,6 +57,5 @@ html, body
 	text-align:left;
 	padding:25px;
 	position:relative;
-	/*margin:15px auto;*/
 	margin-left: 0;
 }

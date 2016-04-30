@@ -147,13 +147,17 @@
 <!--       		END DATABASE SECTION -->
 		<div class = "blogWrapper">
 			<h1 id = "blog" >Development Blog</h1>
-			<script type="text/javascript">
-				var posts = <?
-					$posts = file("../assets/blogposts.txt");
-					$js_array = json_encode($posts);
-					echo $js_array;
-				?>;
-			</script>
+			<script type="text/javascript" src="../js/blog.js"></script>
+		</div>
+
+		<div class = "commentsWrapper">
+			<script type="text/javascript" src="../js/comments.js"></script>
+			<h1>Leave a comment!</h1>
+				<div id ="commentBox">
+					<form>
+					</form>
+				</div>
+				<div id ="commentWall"></div>
 			<script type="text/javascript" src="../js/blog.js"></script>
 		</div>
 	</body>

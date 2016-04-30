@@ -1,20 +1,26 @@
+#parallaxBackgrounds * {
+	background-size: 100% auto;
+}
+
 .bgWrapper{
 	position:fixed;
 	background:url(../assets/bg1.png) top center no-repeat; 
-	background-size: 100% auto;
+	height:100%; 
+	width:100%;
+	top:0; 
+	left:0;
 }
 .farmountain{
 	position:fixed;
-	background:url(../assets/bg2.png) bottom center no-repeat;
+	background:url(../assets/bg2.png) bottom center no-repeat; 
 	width:100%;
-	background-size: 100% auto;
+	height:100%;
 	left:0;
 }
 .closemountain{
 	position:fixed;
 	background:url(../assets/bg3.png) bottom center no-repeat;
 	width:100%;
-	background-size: 100% auto;
 	height:100%; 
 	left:0;
 }
@@ -22,7 +28,6 @@
 	position:fixed;
 	background:url(../assets/bar.png) bottom center no-repeat;
 	width:100%;
-	background-size: 100% auto;
 	height:100%; 
 	left:0;
 }
@@ -30,7 +35,7 @@ div.img {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 300px;
+    width: 50%;
 }
 
 div.img:hover {
@@ -40,6 +45,7 @@ div.img:hover {
 div.img img {
     width: 100%;
     height: auto;
+    float:left;
 }
 
 div.desc {
@@ -51,7 +57,7 @@ div.desc {
 .secondaryWrapper{
 	background:url(../assets/border-img.png) top left repeat-y; 
 	background-size: 100% auto;
-	width:600px; 
+	width:60%; 
 	border-radius:0px;
 	text-align:center;
 	padding:25px;
@@ -67,17 +73,18 @@ div.desc {
 h1{
 	background:url(../assets/border-img.png) top center repeat-y; 
 	background-size: 60% auto;
-	width:300px; 
+	width:100%; 
 	border-radius:0px;
 	text-align:center;
 	padding:25px;
 	position:relative;
 	margin:auto;
+	float:left;
 }
 .anotherWrapper{
 	background:url(../assets/border-img.png) top left no-repeat; 
 	background-size: 100% auto;
-	width:600px; 
+	width:60%; 
 	border-radius:0px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -86,6 +93,19 @@ h1{
 	padding:25px;
 	position:relative;
 	margin:auto;
+}
+
+.anotherWrapper * {
+	color:red;
+	align:center;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: green;
 }
 
 body{

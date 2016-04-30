@@ -5,6 +5,7 @@ $(document).ready(function(){
    	
    	
    	function parallaxScroll(){
+   		$('.blackbar').css('visibility', 'visible');
    		var body = document.body,
 			html = document.documentElement;
 

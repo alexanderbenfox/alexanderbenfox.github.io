@@ -22,11 +22,12 @@ div.desc {
 }
 
 .fade img{
-	width: 300px;
+	width: 400px;
 }
 
 .galleryWrapper{
-	width: 300px;
+	width: 30%;
+	height:70%;
 	border-radius:0px;
 	-moz-border-radius:10px;
 	-webkit-border-radius:10px;
@@ -38,27 +39,34 @@ div.desc {
 	-o-box-shadow:0px 0px 5px #000;
 	text-align:right;
 	padding:25px;
+	padding-bottom:40px;
 	position:relative;
-	/*right: 20px;*/
-	/*margin:15px auto;*/
 	margin-right: 0;
 	float:right;
 	top:-700px;
+	margin-bottom:10px;
 }
 
 .galleryWrapper img{
-	width: 300px;
+	width: 100%;
+	height:100%;
 }
 
 body{
 	font-family: 'silkscreennormal';
 }
 
+#parallaxBackgrounds * {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
 .bgWrapper{
 	position:fixed;
 	background:url(../assets/parallax-mountain-bg.png) bottom center no-repeat; 
-	background-size: 100% auto;
-	height:654px; 
+	height:100%; 
 	width:100%;
 	top:0; 
 	left:0;
@@ -67,34 +75,21 @@ body{
 	position:fixed;
 	background:url(../assets/parallax-mountain-mountains.png) bottom center no-repeat;
 	width:100%;
-	background-size: 100% auto;
 	height:100%; 
 	left:0;
-/*	top:200px; */
-	/*margin-left:-600px;*/
-	/*margin-top:400px;*/
 }
 .blackbar{
 	position:fixed;
 	background:url(../../general_use/assets/blackbar.png) bottom center no-repeat;
 	width:100%;
 	height:100%;
-	background-size: 100%auto;
-	/*margin-top:-500px;*/
-
-/*	top:200px; */
-	/*margin-left:-600px;*/
-	/*margin-top:400px;*/
+	visibility: hidden;
 }
 .farmountain{
 	position:fixed;
 	background:url(../assets/parallax-mountain-montain-far.png) bottom center repeat-x;
 	width:100%;
 	height:100%;
-	background-size: 100% auto;
-	/*left:50%;*/
-	/*margin-left:400px;
-	margin-top:500px;*/
 }
 .mountaintrees{
 	position:fixed;
@@ -102,11 +97,7 @@ body{
 	width:100%;
 	height:100%;
 	top: 0px;
-	background-size: 100% auto;
 	left:0;
-	/*left:50%;*/
-	/*margin-left:400px;
-	margin-top:500px;*/
 }
 .mountaintreesforeground{
 	position:fixed;
@@ -114,9 +105,33 @@ body{
 	width:100%;
 	height:100%;
 	top: 0px;
-	background-size: 100% auto;
 	left:0;
-	/*left:50%;*/
-	/*margin-left:400px;
-	margin-top:500px;*/
+}
+
+
+.arrows{
+	position: relative;
+	float: right;
+	margin-bottom:20px;
+}
+
+.arrows div{
+	margin-top:10px;
+	height: 100px;
+	width: 100px;
+	float:left;
+	color:black;
+	display: flex;
+}
+
+.prev{
+	position:relative;
+	background: url('../../general_use/assets/prev.png') no-repeat;
+	background-size: 25% auto;
+}
+
+.next{
+	position:relative;
+	background: url('../../general_use/assets/next.png') no-repeat;
+	background-size: 25% auto;
 }
