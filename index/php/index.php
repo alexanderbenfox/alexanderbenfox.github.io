@@ -20,7 +20,7 @@
 				</div>
 				<div class = "t-image">
 					<a target="_blank" href="../../ehb_page/assets/ehb1.jpg">
-				    	<img src="../../ehb_page/assets/ehb1.jpg" alt="space" align = "left">
+						<img src="../../ehb_page/assets/ehb1.jpg" alt="space" align = "left">
 					</a>
 					<p style = "position:relative;top:30px;">
 						Get to learn a little about my first project.
@@ -36,7 +36,7 @@
 				</div>
 				<div class = "flip-img">
 					<a target="_blank" href="../../harbinger_page/assets/merchant.gif">
-				    	<img src="../../harbinger_page/assets/merchant.gif" alt="space" align = "left">
+						<img src="../../harbinger_page/assets/merchant.gif" alt="space" align = "left">
 					</a>
 					<p class = "flip-img" style = "position:relative;top:20px;left:30px;margin-left:60px; margin-right:120px">
 						A game that borrows lovingly from it's inspiration: Super Metroid.
@@ -52,7 +52,7 @@
 				</div>
 				<div class = "t-image" style = "position:relative;top:-35px;right:-20px;margin:auto;">
 					<a target="_blank" href="../../harbinger_page/assets/01.png">
-				    	<img src="../../harbinger_page/assets/01.png" alt="space" align = "left">
+						<img src="../../harbinger_page/assets/01.png" alt="space" align = "left">
 					</a>
 					<p style = "position:relative;top:20px;left:30px; margin-left:120px;margin-right:60px">
 						Look at my current project: a game about slaying Demons.
@@ -65,13 +65,13 @@
 				<p>Join the mailing list:</p>
 
 				<form action = "index.php" method = "GET">
-	         		Name: <input type = "text" name = "name" />
-	        		E-mail: <input type = "text" name = "email" />
-	        		Favorite Game: <input type = "text" name = "fav_game" />
-	        		<input type = "submit" />
-	      		</form>
+					Name: <input type = "text" name = "name" />
+					E-mail: <input type = "text" name = "email" />
+					Favorite Game: <input type = "text" name = "fav_game" />
+					<input type = "submit" />
+				</form>
 
-      		</div>
+			</div>
 
 <!--       		BEGIN DATABASE SECTION -->
 			<?
@@ -81,7 +81,7 @@
 					$fav_game = $_GET['fav_game'];
 
 					if(!$_GET['name']){
-				 		exit();
+						exit();
 					}else{
 						$host = "localhost";
 						$user = "root";
@@ -118,10 +118,10 @@
 			?>
 			<table style = "margin-top:20px"border = "1" align = "center">
 				<tr align = "center">
-			        <td style = "font-size:x-large"> NAME </td>
-			        <td style = "font-size:x-large"> EMAIL </td> 
-			        <td style = "font-size:x-large"> FAVORITE GAME </td> 
-		        </tr>
+					<td style = "font-size:x-large"> NAME </td>
+					<td style = "font-size:x-large"> EMAIL </td> 
+					<td style = "font-size:x-large"> FAVORITE GAME </td> 
+				</tr>
 			<?
 				$array = array();
 				for($i = 0; $i<$num; $i++){
@@ -130,10 +130,10 @@
 					$show_fav_game = mysql_result($result,$i,"fav_game")or die(mysql_error());
 			?>
 				<tr align = "center">
-         			<td> <?php echo $show_name;?> </td>
-        			<td> <?php echo $show_email;?> </td> 
-         			<td> <?php echo $show_fav_game;?> </td> 
-         		</tr>
+					<td> <?php echo $show_name;?> </td>
+					<td> <?php echo $show_email;?> </td> 
+					<td> <?php echo $show_fav_game;?> </td> 
+				</tr>
 			<?
 				}
 			?>

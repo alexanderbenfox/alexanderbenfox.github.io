@@ -1,14 +1,14 @@
 $(document).ready(function(){
 	$(window).bind('scroll',function(e){
-   		parallaxScroll();
-   	});
-   	
-   	function parallaxScroll(){
-   		var body = document.body,
+		parallaxScroll();
+	});
+	
+	function parallaxScroll(){
+		var body = document.body,
 			html = document.documentElement;
 
 		var height = Math.max(	body.scrollHeight, body.offsetHeight, 
-           						html.clientHeight, html.scrollHeight, html.offsetHeight );
+								html.clientHeight, html.scrollHeight, html.offsetHeight );
 
 		var width = $( window ).width();
 		var scrollFactor = 850/height;
@@ -22,8 +22,8 @@ $(document).ready(function(){
 
 		var baroffset = $('.mountaintrees').height();
 
-   		var scrolledY = $(window).scrollTop();
-   		if(scrolledY != 0)
+		var scrolledY = $(window).scrollTop();
+		if(scrolledY != 0)
 			$('.bgWrapper').css('background-position','center -'+((scrolledY*.2))+'px');
 		
 		$('.closemountain').css('top','-'+((scrolledY*.1))+'px');
@@ -38,5 +38,5 @@ $(document).ready(function(){
 		{
 			$('.blackbar').css('background-size',' 100% auto');
 		}
-   	}
+	}
 });
