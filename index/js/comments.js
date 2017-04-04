@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		if(commentString != null && authorString != null){
 			var commentBuilder = '<div class =' + "'bubble-speech bubble-right'>";
-			commentBuilder = commentBuilder + "<div class = 'author'>" + authorString + "</div>";
+			commentBuilder = commentBuilder + "<div class = 'author' style = 'font-weight:bold;text-decoration:underline'>" + authorString + "</div>";
 			commentBuilder = commentBuilder + "<div class = 'message'>" + commentString +"</div>";
 			commentBuilder = commentBuilder + "</div>";
 			$('#commentWall').append(commentBuilder);
