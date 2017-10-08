@@ -19,7 +19,8 @@ $(document).ready(function(){
 
 	var posts = [];
 
-	var firstPost = new Post("Some music", "4/4/2017", "No blog posts yet, so here's a song that I like", "https://www.youtube.com/embed/fYSMZpiF7sA" )
+	var firstPost = new Post("Some music", "4/4/2017", "No blog posts yet, so here's a song that I like", "https://www.youtube.com/embed/fYSMZpiF7sA" );
+	var secondPost = new Post("Update on what I've been doing", "10/8/2017", "Since the last time I posted, I was hired at Simcoach games and have not had time to work on Harbinger as much as I'd like to.  Development has slowed down for a while, but the game is still a work in progress.  Meanwhile, I have begun development on a new mobile strategy game that should utilize asychonous networking.  Look forward to a full page about this game soon!");
 	posts.push(firstPost);
 	//function createPosts(posts){
 		var iDiv = document.createElement('div');
